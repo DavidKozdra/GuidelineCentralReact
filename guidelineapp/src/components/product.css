@@ -1,7 +1,48 @@
+
+
 .buttonOptions {
     display: flex;
     flex-direction: row;
-    gap:2;
+    gap:10px;  
+}
+
+.card {
+    border-radius: 10%;
+    background-color: rgb(173, 170, 165);
+    min-width: 150px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    padding: 20px;
+    text-align: center;
+}
 
 
+button:hover{
+    transform: scale(1.2);
+    color: aqua;
+    transform: rotate(10deg);
+}
+
+.card-top {
+    text-align: left ;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    animation: move-card 1s linear;
+}
+
+@keyframes move-card {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :nth-of-type(1) .card {
+    animation: spin-card  infinite 20s linear;
+  }
 }

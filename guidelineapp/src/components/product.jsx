@@ -1,49 +1,59 @@
 import { useState } from "react"
-function Product({name, description, price, imageURL}) {
+import "./product.css"
 
-  const [viewMoreToggle, setViewMoreToggle] = useState()
+function Product({ name, description, price, imageURL }) {
 
-  return (
-    <>
-      <div>
-        <p>
-           {name} 
-        </p>
-          <p>
-           {description} 
-        </p>
-      
+    const [viewMoreToggle, setViewMoreToggle] = useState()
+
+    return (
+        <>
+            <div className="card">
+
+
+                <div className="card-top">
+
+                    <p>
+                        {name}
+                    </p>
+
                 <p>
-           {price} 
-        </p>
-          <img src="https://placehold.co/100x100">
-           {} 
-        </img>
-
-        <div className="buttonOptions">
-
-        <button onClick={()=> {
-           setViewMoreToggle(!viewMoreToggle)
-        }}> View Details</button>
+                    {price}
+                </p>
+                </div>
 
 
-        <button onClick={()=> {
-            console.log("add to cart")
-        }}> Add To Cart</button>
+                <img src="https://placehold.co/300x100">
 
-        </div>
+                </img>
+                <p>
+                    {description}
+                </p>
 
 
-        {viewMoreToggle && (
-            <div> 
+                <div className="buttonOptions">
 
-                View More !
+                    <button onClick={() => {
+                        setViewMoreToggle(!viewMoreToggle)
+                    }}> View Details</button>
+
+
+                    <button onClick={() => {
+                        console.log("add to cart")
+                    }}> Add To Cart</button>
+
+                </div>
+
+
+                {viewMoreToggle && (
+                    <div>
+
+                        View More !
+                    </div>
+
+                )}
             </div>
-
-        )}
-      </div>
-    </>
-  )
+        </>
+    )
 }
 
 export default Product
