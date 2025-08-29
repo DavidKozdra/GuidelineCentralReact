@@ -1,0 +1,7 @@
+.buttonOptions {
+    display: flex;
+    flex-direction: row;
+    gap:2;
+
+
+}
