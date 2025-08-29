@@ -1,7 +1,7 @@
 import { useState } from "react"
 import "./product.css"
 
-function Product({ name, description, price, imageURL }) {
+function Product({ name, description, price, imageURL, moreDetails }) {
 
     const [viewMoreToggle, setViewMoreToggle] = useState()
 
@@ -17,12 +17,12 @@ function Product({ name, description, price, imageURL }) {
                     </p>
 
                 <p>
-                    {price}
+                   $ {price}
                 </p>
                 </div>
 
 
-                <img src="https://placehold.co/300x100">
+                <img src={imageURL}>
 
                 </img>
                 <p>
@@ -45,9 +45,10 @@ function Product({ name, description, price, imageURL }) {
 
 
                 {viewMoreToggle && (
-                    <div>
-
-                        View More !
+                    <div className="details">
+                        <p>
+                            {moreDetails}
+                        </p>
                     </div>
 
                 )}
