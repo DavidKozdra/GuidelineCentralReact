@@ -33,3 +33,12 @@ select {
   padding: 20px;
   font-size: 20px;
 }
+
+@media ( max-width:1000px){
+  .grid {
+  display: flex;
+  flex-direction: column;
+  gap : 100px;
+
+}
+}

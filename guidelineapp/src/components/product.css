@@ -32,7 +32,7 @@ button:hover{
 
 
 button:active{
-    border-bottom: 2px solid white;
+    border-bottom: 5px solid white;
     color: aquamarine;
 }
 .card-top {
@@ -46,6 +46,8 @@ button:active{
     color: white;
     font-size: 20px;
 }
+
+
 
 @keyframes move-right {
   from {
