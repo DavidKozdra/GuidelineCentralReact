@@ -17,9 +17,9 @@
     text-align: center;
 
     color: black;
-
-
     border: 2px solid rgb(100, 100, 212);
+
+    max-height: fit-content;
 }
 
 
@@ -28,7 +28,6 @@ button:hover{
     color: aqua;
     transform: rotate(5deg);
 }
-
 
 
 button:active{
