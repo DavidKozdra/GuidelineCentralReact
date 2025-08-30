@@ -1,7 +1,11 @@
 
 import './App.css'
+import { useState, useEffect } from 'react'
 import Product from "./components/product"
 function App() {
+
+
+
   //product_type, gender and material
   let items = [
     {
@@ -26,7 +30,66 @@ function App() {
     {
       name: "chrismas sweater", description: "a great remote for any TV", price: 15, moreDetails: "added details including scale of the item and location sourced", product_type: "sweater", gender: "unisex", material: "cotton"
     },
+    {
+      name: "poly shirt", description: "a great remote for any TV", price: 15, moreDetails: "added details including scale of the item and location sourced", product_type: "shirt", gender: "unisex", material: "polyester"
+    },
+
+    {
+      name: "lady sweater", description: "a great remote for any TV", price: 15, moreDetails: "added details including scale of the item and location sourced", product_type: "sweater", gender: "female", material: "polyester"
+    },
   ]
+
+  const [filters, setFilters] = useState({
+    product_type: "",
+    gender: "",
+    material: ""
+  })
+
+  const [newItems, setNewItems] = useState(items)
+
+
+  function handleChange() {
+    if (event.target.title == "product_type") {
+      setFilters(
+        {
+          ...filters,
+          product_type: event.target.value,
+        }
+      )
+    }
+
+    if (event.target.title == "gender") {
+      setFilters(
+        {
+          ...filters,
+          gender: event.target.value,
+        }
+      )
+    }
+
+    if (event.target.title == "material") {
+      setFilters(
+        {
+          ...filters,
+          material: event.target.value,
+        }
+      )
+    }
+  }
+
+
+  useEffect(() => {
+    console.log(filters, "get filters")
+    let _newitems = []
+
+    _newitems = items.filter((item) => {
+
+      return (filters.product_type == item.product_type || filters.product_type == "") && (filters.gender == item.gender || filters.gender == "") && (filters.material == item.material || filters.material == "")
+    })
+    console.log(_newitems.length)
+    setNewItems(_newitems)
+  }, [filters])
+
 
   return (
     <>
@@ -37,7 +100,12 @@ function App() {
             Options
           </h1>
 
-          <select title='product Type' >
+
+          <h2>
+            Product Type
+          </h2>
+          <select title='product_type' onChange={handleChange} value={filters.product_type} defaultValue={""}>
+            <option label='unset'> </option>
             <option>shirt</option>
 
             <option>hoodie</option>
@@ -46,7 +114,11 @@ function App() {
           </select>
 
 
-           <select title='Gender' >
+          <h2>
+            Gender
+          </h2>
+          <select title='gender' onChange={handleChange} value={filters.gender} defaultValue={""}>
+            <option label='unset'> </option>
             <option>male</option>
 
             <option>female</option>
@@ -54,8 +126,11 @@ function App() {
             <option>unisex</option>
           </select>
 
-
-           <select title='material' >
+          <h2>
+            Material
+          </h2>
+          <select title='material' onChange={handleChange} value={filters.material} defaultValue={""}>  
+            <option label='unset'> </option>
             <option>silk</option>
 
             <option>polyester</option>
@@ -67,7 +142,7 @@ function App() {
 
         <div className='grid' >
           {
-            items.map((item, i) => {
+            newItems.map((item, i) => {
 
 
               return (
