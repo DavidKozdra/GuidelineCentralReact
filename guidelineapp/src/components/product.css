@@ -9,7 +9,7 @@
 
 .card {
     border-radius: 10px;
-    background-color: rgb(67, 76, 87);
+    background-color: white;
     min-width: 150px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 900;
@@ -17,9 +17,8 @@
     text-align: center;
 
     color: black;
-    border: 2px solid rgb(100, 100, 212);
-
     max-height: fit-content;
+    box-shadow: 10px 5px 5px black;
 }
 
 
@@ -42,7 +41,7 @@ button:active{
     max-width: fit-content;
     animation: move-right .3s linear;
 
-    color: white;
+    color: black;
     font-size: 20px;
 }
 
@@ -68,7 +67,6 @@ button:active{
 
 
 .details{
-    background-color: rgb(146, 148, 173);
     border: 1px rgb(82, 88, 99) solid ;
 
     animation: pop-up  .3s linear;

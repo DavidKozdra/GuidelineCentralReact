@@ -20,7 +20,7 @@ function App() {
       name: "chrismas sweater", description: "sweater with a big green tree", price: 15, moreDetails: "added details including scale of the item and location sourced", product_type: "sweater", gender: "unisex", material: "cotton"
     },
     {
-      name: "Blue shirt", description: "Simple blue colared shirt", price: 7, moreDetails: "added details including scale of the item and location sourced", product_type: "shirt", gender: "male", material: "silk"
+      name: "Blue shirt", description: "Simple blue colared shirt", price: 7, moreDetails: "added details including scale of the item and location sourced", product_type: "shirt", gender: "male", material: "cotton"
     },
 
     {
@@ -36,6 +36,10 @@ function App() {
 
     {
       name: "lady sweater", description: "a great remote for any TV", price: 15, moreDetails: "added details including scale of the item and location sourced", product_type: "sweater", gender: "female", material: "polyester"
+    },
+
+        {
+      name: "lady shirt", description: "a great remote for any TV", price: 15, moreDetails: "added details including scale of the item and location sourced", product_type: "shirt", gender: "female", material: "polyester"
     },
   ]
 

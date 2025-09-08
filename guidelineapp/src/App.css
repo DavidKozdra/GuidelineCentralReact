@@ -1,31 +1,35 @@
 #root {
   margin: auto auto;
   padding: 5rem;
+  background-color: whitesmoke;
 }
 
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3,500px);
-  gap : 100px;
+  grid-template-columns: repeat(3, 500px);
+  gap: 100px;
 
 }
 
 
-.main-container{
+.main-container {
   display: flex;
 }
 
-.filter-container{
+.filter-container {
   display: flex;
   flex-direction: column;
   padding: 50px;
-  margin: 20px;
+  margin-right: 40px;
   min-width: 120px;
-  background-color: rgb(146, 148, 173);
-  border: 1px rgb(82, 88, 99) solid ;
-  gap:20px;
+  background-color: whitesmoke;
+  border: 1px rgb(82, 88, 99) solid;
+  gap: 20px;
   border-radius: 20px;
+  color: black;
+
+  box-shadow: 10px 5px 5px black;
 }
 
 
@@ -39,11 +43,15 @@ select {
 }
 
 
-@media ( max-width:1000px){
+@media (max-width:1000px) {
   .grid {
-  display: flex;
-  flex-direction: column;
-  gap : 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
 
-}
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
 }
